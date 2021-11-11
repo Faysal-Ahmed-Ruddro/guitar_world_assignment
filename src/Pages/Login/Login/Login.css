@@ -1,0 +1,46 @@
+.login_bg{
+    background-color: rgba(0, 0, 0, 0.315);
+    padding:5px 100px;
+}
+
+.login_title{
+    color: rgb(179, 123, 20);
+}
+.login_container{
+    background-color: rgba(0, 0, 0, 0.986);
+    border-radius: 40px;
+    padding: 100px;
+    margin-top: 2%;
+    margin-left: 50%;
+    margin-bottom: 20px;
+}
+form input {
+    width: 80%;
+    color: #fff;
+    border-radius: 50px;
+    border:none;
+    border-bottom: 1px solid orange;
+    padding: 10px;
+    background:transparent;
+}
+::placeholder{
+    color:#fff;
+}
+.loginSubmit{
+ background: transparent;
+ width: 50%;
+ margin-top: 20px;
+ outline: 1px solid orange;
+ color:#fff;
+ border:none;
+ padding : 10px 15px;
+ border-radius: 5px;
+ transition:  0.5s all ease;
+}
+.loginSubmit:hover{
+ background: orange;
+ border:none;
+ color:#000;
+ padding : 10px 15px;
+ border-radius: 5px;
+}

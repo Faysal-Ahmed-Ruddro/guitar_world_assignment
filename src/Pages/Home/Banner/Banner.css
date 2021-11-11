@@ -1,0 +1,24 @@
+.silder_bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://i.ibb.co/Rzbd3cL/Small-Body-Guitar-Banner-1.jpg");
+  height: 80vh;
+  background-size: contain;
+  background-position: center;
+}
+.silder_bg2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://i.ibb.co/yPkXFbb/anthem-acoustic-guitar-pickup-microphone-banner.jpg");
+  height: 80vh;
+  background-size: contain;
+  background-position: center;
+}
+.silder_bg3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://i.ibb.co/wBXRtmy/slider4.jpg");
+  height: 80vh;
+  background-size: contain;
+  background-position: center;
+}
+.slider_p{
+    color:rgb(180, 129, 34);
+}

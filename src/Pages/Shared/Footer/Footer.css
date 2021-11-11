@@ -1,0 +1,24 @@
+.footer_bg{
+    background-image: linear-gradient(rgba(0, 0, 0,0.92), rgba(0, 0, 0,0.92)),
+    url("https://i.ibb.co/KzTbRBz/footer.png");
+  height:50%;
+  background-size: contain;
+  background-position: center;
+}
+.footer_bg .footer_title {
+     text-align: left;
+    color: orange
+}
+.footer_bg li {
+    text-align: left;
+    list-style-type: none;
+    color:rgb(173, 116, 10);
+}
+.fab{
+    transition: 0.5s all ease;
+}
+.fab:hover {
+    background-color: #fff;
+    transform: scale(1.5);
+    border-radius: 10px;
+}
