@@ -10,12 +10,11 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-initializeFirebase()
+initializeFirebase();
 const useFirbase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -29,14 +28,14 @@ const useFirbase = () => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         // saveUser to database
-        
+
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
         }).then(() => {
           // Profile updated!
         });
-        history.push("/");
+        history.replace("/");
       })
       .catch((error) => {
         setError(error.message);

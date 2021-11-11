@@ -1,6 +1,6 @@
 import React from "react";
-import "./Banner.css"
-import { Carousel, } from "react-bootstrap";
+import "./Banner.css";
+import { Carousel } from "react-bootstrap";
 
 const Banner = () => {
   return (
@@ -19,7 +19,9 @@ const Banner = () => {
       <Carousel.Item interval={500}>
         <div className="silder_bg2"></div>
         <Carousel.Caption>
-          <h1 className="text-warning">"Where words leave off, music begins"</h1>
+          <h1 className="text-warning">
+            "Where words leave off, music begins"
+          </h1>
           <p className="slider_p">
             "Music is the only language in which you cannot say <br /> a mean or
             sarcastic thing.."

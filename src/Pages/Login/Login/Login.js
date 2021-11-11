@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Col, Container, Row, } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 
 import googleIcon from "../../../images/gogleIcon.png";
 import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
-  const { user, isLoading, signInWithGoogle, signInWithEmailPass, } =
-    useAuth();
+  const { user, isLoading, signInWithGoogle, signInWithEmailPass } = useAuth();
 
   const [loginData, setLoginData] = useState({});
   const history = useHistory();
@@ -30,6 +29,9 @@ const Login = () => {
     );
     e.preventDefault();
   };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle(location, history);
+  };
   return (
     <div className="login_bg">
       <Container className="login_container ">
@@ -38,7 +40,7 @@ const Login = () => {
         <Row className="d-flex justify-content-center align-items-center">
           <Col xs={12} md={6} lg={6}>
             <div className="">
-              <button onClick={signInWithGoogle} className="loginSubmit">
+              <button onClick={handleGoogleSignIn} className="loginSubmit">
                 <img
                   style={{
                     width: "30px",
@@ -58,7 +60,7 @@ const Login = () => {
                     marginLeft: "-20px",
                     marginRight: "10px",
                   }}
-                  class="fab fa-github me-2"
+                  className="fab fa-github me-2"
                 ></i>
                 Login with Github
               </button>
@@ -91,6 +93,7 @@ const Login = () => {
                 </button>
               </form>
             )}
+            {isLoading && <Spinner animation="border" variant="warning" />}
           </Col>
         </Row>
       </Container>

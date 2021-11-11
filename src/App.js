@@ -1,12 +1,12 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from './Pages/Home/Home/Home';
-import GuitarDetails from './Pages/Home/GuitarDetails/GuitarDetails';
-import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import Login from './Pages/Login/Login/Login';
-import Register from './Pages/Login/Register/Register';
-import AuthProvider from './Pages/Context/AuthProvider';
-import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Home from "./Pages/Home/Home/Home";
+import GuitarDetails from "./Pages/Home/GuitarDetails/GuitarDetails";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
+import AuthProvider from "./Pages/Context/AuthProvider";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -26,9 +26,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/guitarDetails/:keys">
+            <PrivateRoute path="/guitarDetails/:keys">
               <GuitarDetails></GuitarDetails>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>

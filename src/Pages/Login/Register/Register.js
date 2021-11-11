@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
 import "./Register.css";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Alert, Col, Container, Row, Spinner } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 
 import { NavLink } from "react-router-dom";
@@ -26,8 +27,10 @@ const Register = () => {
     signInWithGoogle(location, history);
   };
   const handleRegister = (e) => {
+    e.preventDefault();
     if (registerData.password !== registerData.password2) {
-      alert("Your Password didn't matched yet");
+      swal("Error!", "Your Password doesn't matched!", "error");
+
       return;
     }
     registerNewUser(
@@ -36,13 +39,18 @@ const Register = () => {
       registerData.name,
       history
     );
-    e.preventDefault();
   };
 
   return (
-    <div className="login_bg">
-      <Container className="login_container ">
+    <div className="register_bg">
+      <Container className="register_container ">
         <h2 className="text-warning my-2">Please Register </h2>
+        {error &&
+          ["danger"].map((variant, idx) => (
+            <Alert key={idx} variant={variant}>
+              {error}
+            </Alert>
+          ))}
         <hr className="text-white w-25 mx-auto" />
         <Row className="d-flex justify-content-center align-items-center">
           <Col xs={12} md={6} lg={6}>
@@ -50,7 +58,7 @@ const Register = () => {
               <button
                 onClick={handleGoogleSignIn}
                 type="submit"
-                className="loginSubmit"
+                className="registerSubmit"
               >
                 <img
                   style={{
@@ -64,42 +72,46 @@ const Register = () => {
                 Login With Google
               </button>
               <br />
-              <button type="submit" className="loginSubmit">
+              <button type="submit" className="registerSubmit">
                 <i
                   style={{
                     fontSize: "25px",
                     marginLeft: "-20px",
                     marginRight: "10px",
                   }}
-                  class="fab fa-github me-2"
+                  className="fab fa-github me-2"
                 ></i>
                 Login with Github
               </button>
             </div>
             <NavLink to="/login" style={{ textDecoration: "none" }}>
-              <h4 className="login_title my-3">
+              <h4 className="register_title my-3">
                 Alreadey have an Account? Please Login{" "}
               </h4>
             </NavLink>
           </Col>
+          {/* Register form */}
           <Col xs={12} md={6} lg={6}>
             {!isLoading && (
               <form onSubmit={handleRegister}>
                 <input
+                  className="mb-4"
                   onBlur={handleOnBlur}
                   placeholder="Name"
                   label="Your Name"
                   name="name"
                 />
                 <input
+                  className="mb-4"
                   onBlur={handleOnBlur}
                   label="Your Email"
                   name="email"
                   type="email"
                   placeholder="Email"
                 />
-                <br />
+
                 <input
+                  className="mb-4"
                   onBlur={handleOnBlur}
                   label="Password"
                   name="password"
@@ -107,7 +119,7 @@ const Register = () => {
                   placeholder="Password"
                 />
                 <input
-                  sx={{ width: "75%", m: 1 }}
+                  className="mb-4"
                   onBlur={handleOnBlur}
                   label="Confirm Password"
                   name="password2"
@@ -115,9 +127,18 @@ const Register = () => {
                   placeholder="Confirm Password"
                 />
                 <br />
-                <Button type="submit">Register</Button>
+                <button type="submit" className="registerSubmit">
+                  Register
+                </button>
               </form>
             )}
+            {isLoading && <Spinner animation="border" variant="warning" />}
+            {user.email &&
+              ["success"].map((variant, idx) => (
+                <Alert key={idx} variant={variant}>
+                  User Created Successfully
+                </Alert>
+              ))}
           </Col>
         </Row>
       </Container>

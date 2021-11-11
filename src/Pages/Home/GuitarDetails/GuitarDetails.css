@@ -1,13 +1,55 @@
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
 }
-form input{
-    width: 50%;
-    margin: 5px;
+.guitarDetails_bg {
+  background-color: rgba(0, 0, 0, 0.315);
+  padding: 5px;
+}
 
+.guitarDetails_title {
+  color: rgb(179, 123, 20);
+}
+.guitarDetails_container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url("../../../images/slider3.jpg");
+  border-radius: 40px;
+  padding: 100px;
+  margin-top: 2%;
+  margin-left: 50%;
+  margin-bottom: 20px;
+  background-attachment: fixed;
+}
+form input {
+  width: 80%;
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  border-bottom: 1px solid orange;
+  padding: 10px;
+  background: transparent;
+}
+::placeholder {
+  color: #fff;
+}
+.loginSubmit {
+  background: transparent;
+  width: 50%;
+  margin-top: 20px;
+  outline: 1px solid orange;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.5s all ease;
+}
+.loginSubmit:hover {
+  background: orange;
+  border: none;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 5px;
 }

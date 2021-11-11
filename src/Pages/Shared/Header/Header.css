@@ -1,9 +1,9 @@
-.navlink{
-    color:#fff;
-    text-decoration: none;
-    padding: 15px 20px;
-    font-size: 18px;
+.navlink {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 18px;
 }
-.navlink:hover{
-    color: orange;
+.navlink:hover {
+  color: orange;
 }
