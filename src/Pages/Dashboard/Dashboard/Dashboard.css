@@ -1,0 +1,27 @@
+*{ margin: 0; padding:0 ;} ;
+
+.dashboard_bg{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("https://i.ibb.co/NprWc5M/Acoustic-guitar-with-a-beautiful-wood-on-a-black-background-in-the-light-of-a-spotlight.jpg");
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.sidebar{
+
+}
+.sidebar a{
+     text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 20px;
+    text-align: left;
+    color: orange;
+    background-color: #000;
+   
+}

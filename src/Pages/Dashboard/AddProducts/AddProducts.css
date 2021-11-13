@@ -1,4 +1,4 @@
-.login_bg {
+.addProduct_bg {
   background-color: rgba(0, 0, 0, 0.315);
   padding: 5px;
 }
@@ -6,7 +6,7 @@
 .login_title {
   color: rgb(179, 123, 20);
 }
-.login_container {
+.addProduct_container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
     url("../../../images/slider3.jpg");
   border-radius: 40px;
@@ -16,7 +16,7 @@
   margin-bottom: 20px;
   background-attachment: fixed;
 }
- form input {
+form input,textarea{
   width: 80%;
   color: #fff;
   border-radius: 50px;
@@ -24,11 +24,12 @@
   border-bottom: 1px solid orange;
   padding: 10px;
   background: transparent;
+
 }
 ::placeholder {
   color: #fff;
 }
-.loginSubmit {
+.addProductSubmit {
   background: transparent;
   width: 50%;
   margin-top: 20px;
@@ -39,7 +40,7 @@
   border-radius: 5px;
   transition: 0.5s all ease;
 }
-.loginSubmit:hover {
+.addProductSubmit:hover {
   background: orange;
   border: none;
   color: #000;

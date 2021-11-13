@@ -4,7 +4,7 @@ import { Card, Col, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 const Guitar = (props) => {
-  const { displayName, price, photoUrl, description, keys } =
+  const { _id ,displayName, price, photoUrl, description } =
     props?.product || {};
   return (
     <Col xs={12} md={6} lg={4}>
@@ -23,7 +23,7 @@ const Guitar = (props) => {
           <Card.Text className="text-warning">
             {description.slice(0, 100)}
           </Card.Text>
-          <NavLink to={`/guitarDetails/:${keys}`}>
+          <NavLink to={`/guitarDetails/${_id}`}>
             {" "}
             <Button variant="outline-warning">Purchase</Button>
           </NavLink>

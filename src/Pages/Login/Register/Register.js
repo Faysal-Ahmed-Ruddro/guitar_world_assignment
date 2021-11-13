@@ -15,7 +15,6 @@ const Register = () => {
   const [registerData, setRegisterData] = useState({});
   const history = useHistory();
   const location = useLocation();
-
   const handleOnBlur = (e) => {
     const feild = e.target.name;
     const value = e.target.value;
@@ -30,7 +29,6 @@ const Register = () => {
     e.preventDefault();
     if (registerData.password !== registerData.password2) {
       swal("Error!", "Your Password doesn't matched!", "error");
-
       return;
     }
     registerNewUser(

@@ -6,7 +6,7 @@ import "./Guitars.css";
 const Guitars = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("./fakedata.json")
+    fetch("http://localhost:5000/guitars")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -16,7 +16,7 @@ const Guitars = () => {
         <Row>
           <h2 className="text-white my-5">Our Baby's</h2>
           {products.map((product) => (
-            <Guitar key={products.keys} product={product}></Guitar>
+            <Guitar key={products?._id} product={product}></Guitar>
           ))}
         </Row>
       </Container>
