@@ -19,7 +19,7 @@ const GuitarDetails = () => {
   const [orderInfo, setOrderInfo] = useState(initialInfo);
 
   useEffect(()=>{
-    const url = `http://localhost:5000/guitars/${id}`;
+    const url = `https://rocky-wildwood-09744.herokuapp.com/guitars/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setGuitars(data));
@@ -44,17 +44,18 @@ const GuitarDetails = () => {
     };
     
     // send to server
-    fetch("http://localhost:5000/orders",{
-      method:"POST",
-      headers: {"content-type": "application/json"},
-      body: JSON.stringify(orders)
+    fetch("https://rocky-wildwood-09744.herokuapp.com/orders", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(orders),
     })
-    .then(res => res.json())
-    .then(data =>{ 
-      if (data.insertedId){
-        swal("DONE!", "Order Placed Successfully", "success");
-      } console.log(data);
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          swal("DONE!", "Order Placed Successfully", "success");
+        }
+        console.log(data);
+      });
 
   }
   return (

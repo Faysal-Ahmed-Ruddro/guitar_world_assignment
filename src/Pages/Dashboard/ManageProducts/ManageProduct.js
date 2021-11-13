@@ -5,13 +5,13 @@ import swal from 'sweetalert';
 const ManageProduct = () => {
     const [guitars ,setGuitars] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/guitars")
-        .then(res => res.json())
-        .then(data => setGuitars(data))
+        fetch("https://rocky-wildwood-09744.herokuapp.com/guitars")
+          .then((res) => res.json())
+          .then((data) => setGuitars(data));
     },[])
 
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/guitars/${id}`;
+        const url = `https://rocky-wildwood-09744.herokuapp.com/guitars/${id}`;
         fetch(url,{
             method:"DELETE",
         })

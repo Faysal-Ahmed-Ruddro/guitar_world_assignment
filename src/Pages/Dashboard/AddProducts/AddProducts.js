@@ -13,13 +13,12 @@ const AddProducts = () => {
     const onSubmit = (data) => {
       console.log(data);
       axios
-        .post("http://localhost:5000/guitars", data)
+        .post("https://rocky-wildwood-09744.herokuapp.com/guitars", data)
         .then((res) => {
-          if(res.data.insertedId){
-              swal("DONE!", "Product Added Successfully", "success");
-              reset();
+          if (res.data.insertedId) {
+            swal("DONE!", "Product Added Successfully", "success");
+            reset();
           }
-         
         })
         .catch((error) => {
           console.log(error);

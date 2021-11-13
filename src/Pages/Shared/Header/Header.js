@@ -22,9 +22,13 @@ const Header = () => {
             <NavLink className="navlink" to="/home">
               Home
             </NavLink>
+            <NavLink className="navlink" to="/ourCollection">
+              Our Collection
+            </NavLink>
             <NavLink className="navlink" to="/dashboard">
               Dashboard
             </NavLink>
+            
             {!user.email ? (
               <NavLink className="navlink" to="/login">
                 Login
