@@ -1,27 +1,22 @@
 import React from "react";
-import {
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import { Col, Row } from "react-bootstrap";
-import Header from "../../Shared/Header/Header";
 import useAuth from "../../Hooks/useAuth";
 
 import "./Dashboard.css";
-import Payment from "../Payment/Payment"
+import Payment from "../Payment/Payment";
 import MakeAdmn from "../MakeAdmin/MakeAdmn";
-import MyOrders from "../MyOrders/MyOrders"
+import MyOrders from "../MyOrders/MyOrders";
 import AddProducts from "../AddProducts/AddProducts";
-import ManageAllOrders from "../ManageAllOrders/ManageAllOrders"
-import ManageProducts from "../ManageProducts/ManageProduct"
+import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
+import ManageProducts from "../ManageProducts/ManageProduct";
 import MakeReview from "../MakeReview/MakeReview";
+import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
-  const { logOut } = useAuth();
+  const { logOut, admin } = useAuth();
   return (
     <div className="dashboard_bg">
       <Row>
@@ -31,21 +26,28 @@ const Dashboard = () => {
               <Link to={`${url}/payment`}>
                 <li>PayMent</li>{" "}
               </Link>
-              <Link to={`${url}/makeAdmin`}>
-                <li>Make Admin</li>{" "}
+              <Link to={`${url}/myOrders`}>
+                <li>My Orders</li>{" "}
               </Link>
-              <Link to={`${url}/addProduct`}>
-                {" "}
-                <li>Add Product</li>
-              </Link>
-              <Link to={`${url}/manageAllOrders`}>
-                {" "}
-                <li>Manage All Orders</li>
-              </Link>
-              <Link to={`${url}/manageProduct`}>
-                {" "}
-                <li>Manage Products</li>
-              </Link>
+              {admin && (
+                <div>
+                  <Link to={`${url}/makeAdmin`}>
+                    <li>Make Admin</li>{" "}
+                  </Link>
+                  <Link to={`${url}/addProduct`}>
+                    {" "}
+                    <li>Add Product</li>
+                  </Link>
+                  <Link to={`${url}/manageAllOrders`}>
+                    {" "}
+                    <li>Manage All Orders</li>
+                  </Link>
+                  <Link to={`${url}/manageProduct`}>
+                    {" "}
+                    <li>Manage Products</li>
+                  </Link>
+                </div>
+              )}
               <Link to={`${url}/makeReview`}>
                 {" "}
                 <li>Review</li>
@@ -65,18 +67,21 @@ const Dashboard = () => {
             <Route path={`${path}/payment`}>
               <Payment></Payment>
             </Route>
-            <Route path={`${path}/makeAdmin`}>
+            <Route path={`${path}/myOrders`}>
+              <MyOrders></MyOrders>
+            </Route>
+            <AdminRoute path={`${path}/makeAdmin`}>
               <MakeAdmn></MakeAdmn>
-            </Route>
-            <Route path={`${path}/addProduct`}>
+            </AdminRoute>
+            <AdminRoute path={`${path}/addProduct`}>
               <AddProducts></AddProducts>
-            </Route>
-            <Route path={`${path}/manageAllOrders`}>
+            </AdminRoute>
+            <AdminRoute path={`${path}/manageAllOrders`}>
               <ManageAllOrders></ManageAllOrders>
-            </Route>
-            <Route path={`${path}/manageProduct`}>
+            </AdminRoute>
+            <AdminRoute path={`${path}/manageProduct`}>
               <ManageProducts></ManageProducts>
-            </Route>
+            </AdminRoute>
             <Route path={`${path}/makeReview`}>
               <MakeReview></MakeReview>
             </Route>

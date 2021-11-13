@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 const MyOrders = () => {
     const {user} = useAuth()
     const [orders,setOrders]= useState([])
-    console.log(orders);
+    
     useEffect(()=>{
         const url = `http://localhost:5000/orders?email=${user?.email}`
         fetch(url)
@@ -13,8 +13,8 @@ const MyOrders = () => {
           .then((data) => setOrders(data));
     },[])
     return (
-      <div className="orders_bg">
-        <h2>My Orders Quantity: {orders?.length}</h2>
+      <div className="orders_bg p-3">
+        <h2 className="text-warning">My Orders Quantity: {orders?.length}</h2>
         <Table striped bordered hover variant="dark">
           <thead>
             <tr>
