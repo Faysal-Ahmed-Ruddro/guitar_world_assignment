@@ -7,7 +7,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 const AddProducts = () => {
-    const { error, user, isLoading,  } =useAuth();
+    const { error, user, isLoading,  } = useAuth();
     
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {

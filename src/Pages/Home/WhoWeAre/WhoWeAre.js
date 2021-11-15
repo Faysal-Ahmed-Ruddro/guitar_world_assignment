@@ -1,6 +1,7 @@
 import React from 'react';
 import "./WhoWeAre.css"
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const WhoWeAre = () => {
     return (
@@ -9,7 +10,7 @@ const WhoWeAre = () => {
           <Row>
             <Col xs={12} md={12} lg={12}>
               <div>
-                <h4 className="text-secondary">Who we are</h4>
+                <h4 className="text-secondary">WHO WE ARE ??</h4>
                 <h1 className="text-warning">Sense the Guitar</h1>
                 <p className="text-secondary">
                   Etiam dignissim diam quis enim lobortis scelerisque fermentum.
@@ -22,7 +23,10 @@ const WhoWeAre = () => {
                   tempus egestas sed sed risus. Neque ornare aenean euismod
                   elementum nisi quis eleifend quam.
                 </p>
-                <Button variant="outline-warning">Read More </Button>
+                <NavLink to="#">
+                  {" "}
+                  <Button variant="outline-warning">Read More </Button>
+                </NavLink>
               </div>
             </Col>
           </Row>
