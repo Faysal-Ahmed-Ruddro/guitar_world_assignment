@@ -7,7 +7,7 @@ import googleIcon from "../../../images/gogleIcon.png";
 import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
-  const { user, isLoading, signInWithGoogle, signInWithEmailPass } = useAuth();
+  const { isLoading, signInWithGoogle, signInWithEmailPass } = useAuth();
 
   const [loginData, setLoginData] = useState({});
   const history = useHistory();
