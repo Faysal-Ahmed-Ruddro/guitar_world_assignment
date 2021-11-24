@@ -3,3 +3,4 @@
 * You'll get different type of guitars from here, lIke electric, acostic, ukelele, etc
 * We provide bset quality products Cz honesty is the best policy
 * Guitars are the  important part of msuics. 
+* Guitars are didtal intsrument of music. 
